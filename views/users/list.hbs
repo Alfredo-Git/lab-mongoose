@@ -1,0 +1,7 @@
+<a href="/users/create">New User</a>
+
+<ul>
+  {{#each users as |user| }}
+    <li> {{ user.email }} <a href="/users/{{ user._id }}">Ver</a></li>
+  {{/each }}
+</ul>
