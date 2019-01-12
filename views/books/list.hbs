@@ -1,0 +1,27 @@
+<a class="btn btn-primary mb-3" href="/books/create">New Book</a>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>ISBN</th>
+      <th>Name</th>
+      <th>Author</th>
+      <th>User</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    {{#each books as |book| }}
+      <tr>
+        <td>
+          <a href="/books/{{book._id}}/edit">{{ book.isbn }}</a>
+        </td>
+        <td>{{ book.name }}</td>
+        <td>{{ book.author }}</td>
+        <td>
+          <a href="/users/{{book.user._id}}">{{book.user.email}}</a>
+        </td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>

@@ -4,7 +4,8 @@ const logger = require('morgan');
 const PORT = process.env.PORT || 3000;
 const hbs = require('hbs');
 const bodyParser = require('body-parser');
-const usersRoutes = require('./routes/users.routes')
+const usersRoutes = require('./routes/users.routes');
+const booksRoutes = require('./routes/books.routes');
 
 const app = express();
 
@@ -19,6 +20,7 @@ hbs.registerPartials(__dirname + '/views/partials')
 app.use(express.static(__dirname + '/public'));
 
 app.use('/users', usersRoutes);
+app.use('/books', booksRoutes);
 
 app.listen(PORT, () => {
   console.info(`App listen at ${PORT} port`);
